@@ -1,8 +1,8 @@
 # Run `heroku create` and add the app name here
-HEROKU_APP_NAME=warm-earth-42482
+export HEROKU_APP_NAME=warm-earth-42482
 
 
-HEROKU_APP_URL=https://git.heroku.com/$HEROKU_APP_NAME.git
+export HEROKU_APP_URL=https://git.heroku.com/$HEROKU_APP_NAME.git
 
 KNOWN_GOOD_COMMIT=10451d2ca10cb5681cc3bc38100e5bd0091b39b1
 KNOWN_BAD_COMMIT=0c8109e1b573528bfebea771da6a83d1f5bf7043

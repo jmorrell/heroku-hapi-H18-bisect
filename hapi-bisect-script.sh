@@ -6,7 +6,6 @@
 # git bisect start 0c8109e1b573528bfebea771da6a83d1f5bf7043 10451d2ca10cb5681cc3bc38100e5bd0091b39b1
 
 APP_NAME=hapi
-HEROKU_GIT_REMOTE=https://git.heroku.com/cryptic-escarpment-53435.git
 
 # Copy this directory to a temp directory 
 CURRENT_DIR=$(pwd)
@@ -41,7 +40,7 @@ web: node app
 EOL
 
 # Add Heroku as a remote
-git remote add heroku $HEROKU_GIT_REMOTE
+git remote add heroku $HEROKU_APP_URL
 
 # Add the new changes
 git add .
@@ -56,7 +55,7 @@ touch ./log
 # Run 40 curl commands just to be sure in sequence and save off the output
 for i in `seq 1 40`;
 do
-  curl -s -d'a' https://cryptic-escarpment-53435.herokuapp.com/ | tee -a ./log
+  curl -s -d'a' https://$HEROKU_APP_NAME.herokuapp.com/ | tee -a ./log
 done
 
 # If we see this url at any point in the output we know that the commit is bad
